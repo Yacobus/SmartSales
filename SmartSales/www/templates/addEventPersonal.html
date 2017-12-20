@@ -1,0 +1,104 @@
+﻿<ion-modal-view cache-view="false">
+    
+    <ion-content class="backgroundAdd">
+        <form>
+            <div>
+                <div class="buttons">
+                    <img src="img/closeSch.png" ng-click="closeEvent()" class="imgAddEvent" />
+                </div>
+            </div>
+            <div  class="paddingHeader">
+                <div>
+                    <h3 class="addEvent-title">Add Schedule</h3>
+                </div>
+                <div class="list-addEvent">
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Title Event</span>
+                        <input type="text" ng-model="addEvents.titleEvent" id="titleEventInput" placeholder="Write your Event" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-select item-floating-label">
+                        <div>
+                            <span>Sales</span>
+                            <select ng-model="addEvents.salesID" required >
+                                <option ng-repeat="item in sales"  ng-value="{{item.userid}}">
+                                    {{item.salesName}}
+                                </option>
+                            </select></div>
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <div>
+                            <span>Client</span>
+                            <input readonly type="text" onclick="ClientPopup()" id="titleEventInput" placeholder="Click To Insert Client" />
+                            <button ng-click="ClientPopup()">...</button>
+                        </div>
+
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Contact Person</span>
+                        <input style="background-color:transparent; color:white" type="text" ng-model="addEvents.ContactPerson" id="titleEventInput" readonly />
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Phone1</span>
+                        <input style="background-color:transparent;color:white" type="text" ng-model="addEvents.Phone1" id="titleEventInput" readonly />
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Phone2</span>
+                        <input style="background-color:transparent; color:white" type="text" ng-model="addEvents.Phone2" id="titleEventInput" readonly />
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Email1</span>
+                        <input style="background-color:transparent; color:white" type="text" ng-model="addEvents.Email1" id="titleEventInput" readonly />
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Email2</span>
+                        <input style="background-color:transparent; color:white" type="text" ng-model="addEvents.Email2" id="titleEventInput" readonly />
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>status</span>
+                        <input type="text" ng-model="addEvents.status" id="titleEventInput" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Start Event</span>
+                        <input type="datetime-local" ng-model="addEvents.startEvent" id="timedatestart">    
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>End Event</span>
+                        <input type="datetime-local" ng-model="addEvents.endEvent" id="timedateend">
+
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent">Your Comment</span>
+                    <textarea rows="5" placeholder="Write Your Comment" width="100%" ng-model="commentnew.commentator"></textarea>
+                    <hr />
+                    <div>
+                        <button class="button button-block button-outline button-light buttonLog" ng-click="takePic()">
+                            <h5 class="loginButton"><b>Take Pic</b></h5>
+                        </button>
+                    </div>
+                    <div class="imgPic">
+                        <img src="{{imagePath}}" />
+                    </div>
+                    <hr/>
+                    <div class="buttonAddEvent">
+                       
+                        <div>
+                            <button class="button button-block button-outline button-light buttonLog" ng-disabled="tambahPersonal.$invalid" ng-click="tambahPersonal()">
+                                <h5 class="loginButton"><b>Add Event</b></h5>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

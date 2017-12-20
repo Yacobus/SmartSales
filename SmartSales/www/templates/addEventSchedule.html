@@ -1,0 +1,96 @@
+﻿<ion-modal-view cache-view="false">
+    <ion-content class="backgroundAdd">
+        <form>
+            <div>
+                <div class="buttons">
+                    <img src="img/closeSch.png" ng-click="closeEvent()" class="imgAddEvent" />
+                </div>
+            </div>
+            <div class="paddingHeader">
+                <div>
+                    <h3 class="addEvent-title">Add Event</h3>
+                </div>
+
+                <div class="list-addEventCtrl">
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Event Title</span>
+                        <input type="text" ng-model="event.eventTitle" id="titleEventInput" placeholder="Write your Event" />
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Client Name</span>
+                        <input type="text" ng-model="event.clientName"/>
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Contact Person</span>
+                        <input type="text" ng-model="event.entityName"/>
+                    </span>
+                    <hr />
+                    <ion-list>
+                        <ion-item id="transp" class="headerAccordion"
+                                  ng-click="toggleGroup(group)"
+                                  ng-class="{active: isGroupShown(group)}">
+                            Contact Detail
+                            <i class="icon" ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>
+                            &nbsp;
+                        </ion-item>
+                        <ion-item class="item-accordion" ng-show="isGroupShown(group)">
+                            <table class="table">
+                                <tr>
+                                    <td>Phone1</td>
+                                    <td>{{event.Phone1}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Phone2</td>
+                                    <td>{{event.Phone2}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email1</td>
+                                    <td>{{event.Email1}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email2</td>
+                                    <td>{{event.Email2}}</td>
+                                </tr>
+                            </table>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+                    <span class="addTitleEvent">Your Comment</span>
+                    <textarea rows="5" placeholder="Write Your Comment" width="100%" ng-model="event.comment"></textarea>
+                    <hr />
+                    <div>
+                        <button class="button button-block button-outline button-light buttonLog" ng-click="takePic()">
+                            <h5 class="loginButton"><b>Take Pic</b></h5>
+                        </button>
+                    </div>
+                    <div class="imgPic">
+                        <img src="{{event.imagePath}}" />
+                    </div>
+                    <hr />
+
+                    <div class="buttonAddEvent">
+                        <div>
+                            <button class="button button-block button-outline button-light buttonLog" ng-click="saveEvent()">
+                                <h5 class="loginButton"><b>Add Event</b></h5>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
+
+<!--<div>
+    <button class="button button-block button-outline button-light buttonLog" ng-click="takePic()">
+        <h5 class="loginButton"><b>Take Pic</b></h5>
+    </button>
+</div>
+<hr />
+<div class="imgPic">
+    <img src="{{imagePath}}" />
+</div>
+<hr />-->

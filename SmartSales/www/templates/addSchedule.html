@@ -1,0 +1,103 @@
+﻿<ion-modal-view cache-view="false">
+
+    <ion-content class="backgroundAdd">
+        <form>
+            <div>
+                <div class="buttons">
+                    <img src="img/closeSch.png" ng-click="closeSchedule()" class="imgAddEvent" />
+                </div>
+            </div>
+            <div class="paddingHeader">
+                <div>
+                    <h3 class="addEvent-title">Add Schedule</h3>
+                </div>
+                <div class="list-addEvent">
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Schedule Title</span>
+                        <input type="text" ng-model="schedule.titleEvent" id="titleEventInput" placeholder="Write your Title Event" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-select item-floating-label">
+
+                        <span>Sales</span>
+                        <!--<select ng-model="selectedSales" ng-options="item.salesName for item in sales" ng-change="getClient()"></select>-->
+                        <select ng-model="schedule.salesId" required ng-change="getClient(schedule.salesId)">
+                            <option ng-repeat="item in sales" ng-value="{{item.userid}}">
+                                {{item.salesName}}
+                            </option>
+                        </select>
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-select item-floating-label">
+                        <span>Client</span>
+                        <!--<select ng-model="selectedClient" ng-options="item.clientName for item in client" ng-change="getEntity(item.clientID)"></select>-->
+                        <select ng-model="schedule.clientId" ng-change="getEntity(schedule.clientId)">
+                            <option ng-repeat="item in client" ng-value="{{item.clientId}}">{{item.clientName}}</option>
+                        </select>
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-select item-floating-label">
+                        <span>Contact Person</span>
+                        <!--<select ng-model="selectedEntity" ng-options="item.entityName for item in entity" ng-change="getEntityDetail($index)"></select>-->
+                        <select ng-model="schedule.entityId" ng-change="getEntityDetail(shedule.entityId,true)">
+                            <option ng-repeat="item in entity" ng-value="{{item.entityId}}">{{item.entityName}}</option>
+                        </select>
+                    </span>
+                    <hr />
+                    <ion-list>
+                        <ion-item id="transp" class="headerAccordion"
+                                  ng-click="toggleGroup(group)"
+                                  ng-class="{active: isGroupShown(group)}">
+                            Contact Detail
+                            <i class="icon" ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>
+                            &nbsp;
+                        </ion-item>
+                        <ion-item class="item-accordion" ng-show="isGroupShown(group)">
+                            <table class="table">
+                                <tr>
+                                    <td>Phone1</td>
+                                    <td>{{schedule.Phone1}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Phone2</td>
+                                    <td>{{schedule.Phone2}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email1</td>
+                                    <td>{{schedule.Email1}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email2</td>
+                                    <td>{{schedule.Email2}}</td>
+                                </tr>
+                            </table>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Start Event</span>
+                        <input type="datetime-local" ng-model="schedule.startEvent" id="timedatestart">
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>End Event</span>
+                        <input type="datetime-local" ng-model="schedule.endEvent" id="timedateend">
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent">Task Description</span>
+                    <textarea rows="5" placeholder="Write Your Task Description" width="100%" ng-model="schedule.description"></textarea>
+                    <hr />
+                    <div class="buttonAddEvent">
+
+                        <div>
+                            <button class="button button-block button-outline button-light buttonLog" ng-disabled="tambahPersonal.$invalid" ng-click="saveSchedule()">
+                                <h5 class="loginButton"><b>Add Schedule</b></h5>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

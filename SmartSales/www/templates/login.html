@@ -1,0 +1,49 @@
+<ion-view ng-init="init()">
+    <ion-content class="backgroundLogin">
+        <div>
+            <div class="loginHeader">
+                <img src="img/logo.png" class="imgLogo" />
+            </div>
+            <div class="labelLogin">
+                <label class="labelLog"> SAIL MOBILE </label>
+            </div>
+        </div>
+
+        <div class="containerForm">
+            <div class="row">
+                <div class="col col-10">
+                    <div class="formlogImage">
+                        <img src="img/usernamelogin.png" id="personLogin">
+                    </div>
+                </div>
+                <div class="col col-90">
+                    <div class="formlogInput">
+                        <input class="inputLogin item-floating-label" type="text" placeholder="Input your user ID" ng-model="user.username">
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col col-10">
+                    <div class="formlogImage">
+                        <img src="img/ico_password.png" id="personLogin" />
+                    </div>
+                </div>
+                <div class="col col-90">
+                    <div class="formlogInput">
+                        <input class="inputLogin item-floating-label" type="password" placeholder="Input your password" ng-model="user.password">
+
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        <div class="buttonLogin">
+            <button class="button button-block button-outline button-light buttonLog" ng-click="login()">
+                <h5 class="loginButton"><b>LOGIN</b></h5>
+            </button>
+        </div>
+    </ion-content>
+
+</ion-view>

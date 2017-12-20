@@ -1,0 +1,40 @@
+﻿<ion-view>
+    <ion-content class="backgroundLogin" padding="true" scroll="false">
+        <h3 class="topRegister">Register</h3>
+        <form class="formRegister">
+            <div>
+                <div>
+                    <div>
+                        <label style="color: white" class="item item-input borderForm transp icon ion-person">
+                            <input style="padding-left:4em; color:white" type="text" placeholder="Nama Anda" ng-model="user.name">
+                        </label>
+                        <hr />
+                        <label style="color: white" class="item item-input borderForm transp icon ion-android-people">
+                            <input style="padding-left:4em; color:white" type="text" placeholder="Username Anda" ng-model="user.username">
+                        </label>
+                        <hr />
+                        <label style="color: white" class="item item-input borderForm transp icon ion-android-lock">
+                            <input style="padding-left:4em; color:white" type="password" placeholder="Password Anda" ng-model="user.password">
+                        </label>
+                        <hr />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <button style="border:2.1px solid white; color: white" class="button button-outline button-positive col col-left 40" ng-click="register()">
+                            <strong>Submit</strong>
+                        </button>
+                        <button style="border:2.1px solid white; color: white" class="button button-outline button-positive col col-right 40" ui-sref="login">
+                            <strong>Back</strong>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </ion-content>
+
+</ion-view>
+
+

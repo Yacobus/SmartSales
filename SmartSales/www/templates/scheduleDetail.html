@@ -1,0 +1,99 @@
+﻿<ion-modal-view cache-view="false">
+
+    <ion-content class="backgroundAdd">
+        <form>
+            <div>
+                <div class="buttons">
+                    <img src="img/closeSch.png" ng-click="closeSchedule()" class="imgAddEvent" />
+                </div>
+            </div>
+            <div class="paddingHeader">
+                <div>
+                    <h3 class="addEvent-title">Detail Schedule</h3>
+                </div>
+                <div class="list-addEvent">
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Schedule Title</span>
+                        <input type="text" ng-model="schedule.titleEvent" id="titleEventInput" placeholder="Write your Title Event" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Sales</span>
+                        <input id="titleEventInput" type="text" ng-model="schedule.salesName" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Client Name</span>
+                        <input id="titleEventInput" type="text" ng-model="schedule.clientName" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Contact Person</span>
+                        <input type="text" ng-model="schedule.entityName" id="titleEventInput" placeholder="Write your Title Event" />
+                    </span>
+                    <hr />
+                    <ion-list>
+                        <ion-item id="transp" class="headerAccordion"
+                                  ng-click="toggleGroup(group)"
+                                  ng-class="{active: isGroupShown(group)}">
+                            Contact Detail
+                            <i class="icon" ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>
+                            &nbsp;
+                        </ion-item>
+                        <ion-item class="item-accordion" ng-show="isGroupShown(group)">
+                            <table class="table">
+                                <tr>
+                                    <td>Phone1</td>
+                                    <td>{{schedule.Phone1}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Phone2</td>
+                                    <td>{{schedule.Phone2}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email1</td>
+                                    <td>{{schedule.Email1}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email2</td>
+                                    <td>{{schedule.Email2}}</td>
+                                </tr>
+                            </table>
+                        </ion-item>
+                    </ion-list>
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Start Date</span>
+                        <input id="titleEventInput" type="datetime-local" ng-model="schedule.startEvent" id="timedatestart">
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>End Date</span>
+                        <input id="titleEventInput" type="datetime-local" ng-model="schedule.endEvent" id="timedateend">
+                    </span>
+                    <hr />
+                    <span class="addTitleEvent">Task Description</span>
+                    <textarea rows="3" placeholder="Write Your Task Description" width="100%" ng-model="schedule.description"></textarea>
+                    <hr />
+                    <div class="buttonAddEvent">
+
+                        <div>
+                            <button class="button button-block button-outline button-light buttonLog" ng-hide="schedule.complete!=null || schedule.status=='C' || schedule.status=='R' || schedule.status=='P'" ng-click="addEvent(scheduleId)">
+                                <h5 class="loginButton"><b>Add Event</b></h5>
+                            </button>
+                            <button class="button button-block button-outline button-light buttonLog" ng-hide="delegateTask=='0' && (schedule.complete!=null schedule.status=='C' || schedule.status=='P')" ng-click="delegate()">
+                                <h5 class="loginButton"><b>Delegate</b></h5>
+                            </button>
+                            <button class="button button-block button-outline button-light buttonLog" ng-hide="schedule.complete!=null || schedule.status=='C'" ng-click="reSchedule()">
+                                <h5 class="loginButton"><b></b>Re-Schedule</h5>
+                            </button>
+                            <button class="button button-block button-outline button-light buttonLog" ng-hide="schedule.complete!=null || schedule.status=='C' || schedule.status=='R'" ng-click="cancelSchedule()">
+                                <h5 class="loginButton"><b>Cancel</b></h5>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

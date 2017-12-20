@@ -1,0 +1,51 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+                <button class="button imgButtonmenu" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <hr />
+
+    <ion-side-menu side="left">
+        <ion-content class="bg-sidemenu" drag-content="false">
+            <br />
+            <br />
+            <div menu-close ui-sref="app.profile">
+                <div class="fotoprofile">
+                    <img src="img/profile.png" />
+                </div>
+                <div>
+                    <span class="username">{{username}}</span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="divListCustom">
+                <ion-list class="listCustom">
+                    <div>
+                        <img class="addIcon" src="img/ico_my_schedule.png" />
+                        <button class="mySchedule" menu-close ui-sref="app.notification">Notification</button>
+                    </div>
+                    <div>                    
+                        <img class="addIcon" src="img/ico_my_schedule.png" />
+                        <button class="mySchedule" menu-close ui-sref="app.schedule" >Schedule</button>
+                    </div>
+                    <!--<div>
+                        <img class="addIcon" src="img/ico_my_schedule.png" />
+                        <button class="mySchedule"  menu-close>Master Client</button>
+                    </div>-->
+                    <div class="myScheduleLog">
+                        <label class="addIconLog ion-power" ></label>
+                        <button ng-click="signOut()" >Sign Out</button>
+                    </div>
+                </ion-list>
+            </div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,42 @@
+﻿<ion-modal-view cache-view="false">
+
+    <ion-content class="backgroundAdd">
+        <form >
+            <div>
+                <div class="buttons">
+                    <img src="img/closeSch.png" ng-click="closeEvent()" class="imgAddEvent" />
+                </div>
+            </div>
+            <div class="paddingHeader">
+                <div>
+                    <h3 class="addEvent-title">Add Event</h3>
+                </div>
+                <div class="list-addEvent">
+                    <span class="addTitleEvent item-input item-floating-label">
+                        <span>Title Event</span>
+                        <input type="text" ng-model="addEvents.titleEvent" id="titleEventInput" placeholder="Write your Event" />
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>Start Event</span>
+                        <input type="datetime-local" ng-model="addEvents.startEvent" id="timedatestart">
+
+                    </span>
+                    <hr />
+                    <span class="item addTitleEvent item-input item-floating-label">
+                        <span>End Event</span>
+                        <input type="datetime-local" ng-model="addEvents.endEvent" id="timedateend">
+
+                    </span>
+                    <hr />
+                </div>
+
+                <div class="buttonAddEvent">
+                    <button class="button button-block button-outline button-light buttonLog" ng-click="tambahAll()">
+                        <h5 class="loginButton"><b>ADD</b></h5>
+                    </button>
+                </div>
+            </div>
+        </form>
+</ion-content>
+</ion-modal-view>

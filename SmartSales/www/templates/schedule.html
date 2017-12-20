@@ -1,0 +1,34 @@
+﻿<ion-view view-title="MySchedules">
+    <ion-nav-title class="headerSchedule">{{displayCalendar}} {{displayData}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <!--<button ng-show="ScheduleUpdate" class="addEvent" menu-toggle="right" ng-click="Event(-1)"></button>-->
+    </ion-nav-buttons>
+    <ion-content class="schedule">
+        <div class="row">
+            <div class="col"><button ng-click="prev()" class="button button-icon icon ion-chevron-left"></button></div>
+            <div class="col col-75"><label>{{current}}</label></div>
+            <div class="col"><button ng-click="next()" class="button button-icon icon ion-chevron-right"></button></div>
+        </div>
+        <div class="row">
+            <a class="button0 button-small" ng-click="today()" ng-class="{ 'active': view == 'today' }">Today </a>
+            <a class="button0 button-small" ng-click="changeView('listDay','myCalendar')" ng-class="{ 'active': view == 'listDay' }">List Day </a>
+            <a class="button0 button-small" ng-click="changeView('listWeek','myCalendar')" ng-class="{ 'active': view == 'listWeek'}">List Week</a>
+            <a class="button0 button-small" ng-click="changeView('month','myCalendar')" ng-class="{ 'active': view == 'month' }">Monthly</a>
+        </div>
+        <div class="row">
+            <a class="col col-20 button0 button-small" ng-click="changeCalendar('personal')" ng-class="{'active': displayCalendar == 'personal'}" ng-disabled="displayCalendar=='personal'">Personal</a>
+            <a class="col col-20 button0 button-small" ng-click="changeCalendar('all')" ng-class="{'active': displayCalendar == 'all'}" ng-disabled="displayCalendar=='all'">All</a>
+            <div class="col col-20"></div>
+            <a class="col col-20 button0 button-small" ng-click="changeData('schedule')" ng-class="{'active': displayData == 'schedule'}" ng-disabled="displayData=='schedule'">Schedules</a>
+            <a class="col col-20 button0 button-small" ng-click="changeData('event')" ng-class="{'active': displayData == 'event'}" ng-disabled="displayData=='event'">Events</a>
+        </div>
+
+        <div class="calendar" calendar="myCalendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+    </ion-content>
+
+    <ion-floating-menu menu-color="#bf3334" menu-open-color="#FFFFFF" menu-open-icon-color="#000000">
+        <ion-floating-item ng-click="addSchedule()" button-color="#bf3334" icon="ion-android-calendar" icon-color="#fff"></ion-floating-item>
+        <ion-floating-item ng-click="addEvent(-1)" button-color="#bf3334" icon="ion-android-time" icon-color="#fff"></ion-floating-item>
+    </ion-floating-menu>
+
+</ion-view>

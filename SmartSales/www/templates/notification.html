@@ -1,0 +1,47 @@
+﻿<ion-view >
+    <ion-nav-title>Notification</ion-nav-title>
+    <ion-content class="notif">
+        <ion-list>
+            <ion-item ng-repeat="notif in notificated">
+                <!--<div>
+                    <p>{{notif.title}}</p>
+                    <p>FROM : {{notif.start}}</p>
+                    <p>TO : {{notif.end}}</p>
+                </div>-->
+                <div>
+                    <p>Client ID : {{notif.id}}</p>
+                    <p>Client Name: {{notif.name}}</p>
+                </div>
+                
+               
+                <!--<ion-option-button class="button-assertive">Delete
+                </ion-option-button>-->
+            </ion-item>
+            
+        </ion-list>
+        </br>
+        <!--<div>
+            <button class="button button-block button-positive" ng-click="scheduleSingleNotification()">
+                Show Local Notification (1)
+            </button>
+            <button class="button button-block button-positive" ng-click="scheduleDelayedNotification()">
+                Show Local Notification After 10 sec (2)
+            </button>
+            <button class="button button-block button-positive" ng-click="scheduleEveryMinuteNotification()">
+                Show Local Notification Every 1 min (3)
+            </button>
+            <button class="button button-block button-positive" ng-click="updateSingleNotification()">
+                Update Notification 2 (after 10 sec)
+            </button>
+            <button class="button button-block button-positive" ng-click="cancelSingleNotification()">
+                Cancel Notification 3 (every 1 min)
+            </button>
+            <button class="button button-block button-assertive" ng-click="testing()">
+                Testing
+            </button>
+        </div>-->
+    </ion-content>
+        <!--<ion-footer-bar class="notif-footer">
+          <a class="button button-clear button-light">Clear All</a>  
+        </ion-footer-bar>-->
+</ion-view>
